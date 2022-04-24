@@ -3,20 +3,13 @@ pydiceroller init
 """
 
 from random import random
-from colorama import Back
-from columnar import columnar
-from columnar import exceptions
 from click import style
 from pydiceroller.args import compute_args
 import os
-import copy
 import random
-import time
 import subprocess
 from shutil import which
 import re
-from termcolor import colored
-import colorama
 
 DICE_EMOJI = "\U0001f3b2"
 
@@ -25,7 +18,7 @@ def pydiceroller():
     pydiceroller entry point
     """
     #fix potential windows bug
-    colorama.init()
+    #colorama.init()
     os.sys.stdin.reconfigure(encoding='utf-8')
     os.sys.stdout.reconfigure(encoding='utf-8')
     if compute_args().update:
@@ -86,6 +79,4 @@ def update():
         "pydiceroller",
     ]
     subprocess.check_call(params)
-
-def printwarning(txt):
-    print(colored(txt,"yellow"))    
+   
