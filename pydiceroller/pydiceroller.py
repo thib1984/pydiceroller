@@ -3,7 +3,6 @@ pydiceroller init
 """
 
 from random import random
-from click import style
 from pydiceroller.args import compute_args
 import os
 import random
