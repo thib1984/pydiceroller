@@ -6,11 +6,12 @@ pydiceroller is a minimal diceroller in your terminal
 
 ![image](./pydiceroller.png)
 ## 🚀 How to use **pydiceroller**
-
+```
 pydiceroller 6 #one 6dice
 pydiceroller 2D6 #two 6dice
 pydiceroller D10 20 #one 10dice and one 20dice
 pydiceroller S2D6 #sum of two 6dice
+```
 ## 🚀🚀 Options
 
 ```
