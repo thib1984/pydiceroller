@@ -40,30 +40,38 @@ def pydiceroller():
             print("bad param") 
             exit(1)
 
-    for dice in compute_args().dices:
-        if re.match("^[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ):
-            number=dice.lower().split('d')[0]
-            diceone=dice.lower().split('d')[1]
-            for r in range(int(number)):
-                print(((DICE_EMOJI + diceone + " : ") if not compute_args().silent else "") + str(random.randint(1, int(diceone))))
-        elif re.match("^d[1-9][0-9]*$",dice.lower() ):
-            number=1
-            diceone=dice[1:]
-            for r in range(int(number)):
-                print(((DICE_EMOJI + diceone + " : ") if not compute_args().silent else "") + str(random.randint(1, int(diceone))))              
-        elif re.match("^[1-9][0-9]*$",dice.lower() ):
-            number=1
-            diceone=dice
-            for r in range(int(number)):
-                print(((DICE_EMOJI + diceone + " : ") if not compute_args().silent else "") + str(random.randint(1, int(diceone))))              
+    while True:
+        for dice in compute_args().dices:
+            if re.match("^[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ):
+                number=dice.lower().split('d')[0]
+                diceone=dice.lower().split('d')[1]
+                for r in range(int(number)):
+                    print(((DICE_EMOJI + diceone + " : ") if not compute_args().silent else "") + str(random.randint(1, int(diceone))))
+            elif re.match("^d[1-9][0-9]*$",dice.lower() ):
+                number=1
+                diceone=dice[1:]
+                for r in range(int(number)):
+                    print(((DICE_EMOJI + diceone + " : ") if not compute_args().silent else "") + str(random.randint(1, int(diceone))))              
+            elif re.match("^[1-9][0-9]*$",dice.lower() ):
+                number=1
+                diceone=dice
+                for r in range(int(number)):
+                    print(((DICE_EMOJI + diceone + " : ") if not compute_args().silent else "") + str(random.randint(1, int(diceone))))              
 
-        elif re.match("^s[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ):
-            number=dice[1:].lower().split('d')[0]
-            diceone=dice[1:].lower().split('d')[1]
-            result=0
-            for r in range(int(number)):
-                result=result+random.randint(1, int(diceone))
-            print(((number + DICE_EMOJI + diceone + " : ") if not compute_args().silent else "")  + str(result))                  
+            elif re.match("^s[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ):
+                number=dice[1:].lower().split('d')[0]
+                diceone=dice[1:].lower().split('d')[1]
+                result=0
+                for r in range(int(number)):
+                    result=result+random.randint(1, int(diceone))
+                print(((number + DICE_EMOJI + diceone + " : ") if not compute_args().silent else "")  + str(result))   
+        if compute_args().infinite:
+            try:
+                input("press any key to relaunch dices, ctrl-c to exit")
+            except KeyboardInterrupt:
+                break    
+        else:
+            break
 def update():
     """
     entry point for --update

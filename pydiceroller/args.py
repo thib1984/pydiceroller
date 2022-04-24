@@ -30,7 +30,7 @@ Written by thib1984."""
         metavar="dices",
         type=str,
         nargs="*",
-        help="dices, with format example : 6, D6, 2D10, S3D10 (for sum) -can give two or more parameters-",
+        help="dices, with format example : 6, D6, 2D10, S3D10 (for sum) -can give one or more parameters-",
     ) 
     my_parser.add_argument(
         "-u",
@@ -42,8 +42,14 @@ Written by thib1984."""
         "-s",
         "--silent",
         action="store_true",
-        help="minimal output",
-    ),                       
+        help="minimal output, use for pip commands",
+    ),
+    my_parser.add_argument(
+        "-i",
+        "--infinite",
+        action="store_true",
+        help="press entry to relaunch same dices, ctrl-c to exit",
+    ),                        
 
     args = my_parser.parse_args()
     return args
