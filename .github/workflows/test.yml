@@ -34,5 +34,5 @@ jobs:
           pip install .
       - name: minimal test
         run: |
-          pydiceroller 3D6 12 S2D10
+          pydiceroller 3D6 12 S2D10 3s2d6
           pydiceroller -h         

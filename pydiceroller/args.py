@@ -30,7 +30,7 @@ Written by thib1984."""
         metavar="dices",
         type=str,
         nargs="*",
-        help="dices, with format example : 6, D6, 2D10, S3D10 (for sum) -can give one or more parameters-",
+        help="dices, with format example : 6, D6, 2D10, S3D10 (for sum), 2S2D6 -can give one or more parameters-",
     ) 
     my_parser.add_argument(
         "-u",

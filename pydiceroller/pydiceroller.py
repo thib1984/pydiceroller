@@ -28,8 +28,8 @@ def pydiceroller():
         exit(1)
 
     for dice in compute_args().dices:
-        if not re.match("^[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ) and not re.match("^d?[1-9][0-9]*$",dice.lower() ) and not re.match("^s[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ):
-            print("bad param") 
+        if not re.match("^[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ) and not re.match("^d?[1-9][0-9]*$",dice.lower() ) and not re.match("^s[1-9][0-9]*d[1-9][0-9]*$",dice.lower()) and not re.match("^[1-9][0-9]*s[1-9][0-9]*d[1-9][0-9]*$",dice.lower()):
+            print("bad param, use --help to see correct syntax") 
             exit(1)
 
     while True:
@@ -56,7 +56,17 @@ def pydiceroller():
                 result=0
                 for r in range(int(number)):
                     result=result+random.randint(1, int(diceone))
-                print(((number + DICE_EMOJI + diceone + " : ") if not compute_args().silent else "")  + str(result))   
+                print(((number + DICE_EMOJI + diceone + " : ") if not compute_args().silent else "")  + str(result)) 
+            elif re.match("^[1-9][0-9]*s[1-9][0-9]*d[1-9][0-9]*$",dice.lower() ):
+                numberdice=dice.lower().split('s')[0]
+                dicee=dice.lower().split('s')[1]
+                for r in range(int(numberdice)):
+                    number=dicee.lower().split('d')[0]
+                    diceone=dicee.lower().split('d')[1]
+                    result=0
+                    for r in range(int(number)):
+                        result=result+random.randint(1, int(diceone))
+                    print(((number + DICE_EMOJI + diceone + " : ") if not compute_args().silent else "")  + str(result))                    
         if compute_args().infinite:
             try:
                 input("press any key to relaunch dices, ctrl-c to exit")
