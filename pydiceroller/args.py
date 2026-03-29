@@ -5,7 +5,18 @@ pygitscrum argparse gestion
 import argparse
 import sys
 from argparse import RawTextHelpFormatter
+import importlib.metadata
 
+def get_env_report():
+    lines = []
+
+    lines.append("\nInstalled packages:")
+    for dist in sorted(importlib.metadata.distributions(), key=lambda d: d.metadata["Name"].lower()):
+        name = dist.metadata["Name"]
+        version = dist.version
+        lines.append(f"  - {name}=={version}")
+
+    return "\n".join(lines)
 
 
 def compute_args():
@@ -16,7 +27,7 @@ def compute_args():
         description="""
 Synopsis : minimal dice roller
         """,
-        epilog="""
+        epilog=f"""
 To upgrade, run:
     pipx upgrade pyconwaysgame --include-deps
 To install, run:
@@ -27,7 +38,9 @@ To uninstall, run:
     pipx uninstall pyconwaysgame
 To force uninstall (if needed), run:
     pipx uninstall pyconwaysgame --force
-            
+
+{get_env_report()}
+
 Full documentation at: <https://github.com/thib1984/pydiceroller>
 Report bugs to <https://github.com/thib1984/pydiceroller/issues>
 MIT Licence

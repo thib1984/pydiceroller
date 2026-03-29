@@ -2,6 +2,7 @@
 
 - disable self update
 - clean docs
+- display versions
 
 ## 0.1.1
 
