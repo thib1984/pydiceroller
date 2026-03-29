@@ -17,6 +17,17 @@ def compute_args():
 Synopsis : minimal dice roller
         """,
         epilog="""
+To upgrade, run:
+    pipx upgrade pyconwaysgame --include-deps
+To install, run:
+    pipx install pyconwaysgame
+To force reinstall, run:
+    pipx install pyconwaysgame --force
+To uninstall, run:
+    pipx uninstall pyconwaysgame
+To force uninstall (if needed), run:
+    pipx uninstall pyconwaysgame --force
+            
 Full documentation at: <https://github.com/thib1984/pydiceroller>
 Report bugs to <https://github.com/thib1984/pydiceroller/issues>
 MIT Licence
@@ -32,12 +43,6 @@ Written by thib1984."""
         nargs="*",
         help="dices, with format example : 6, D6, 2D10, S3D10 (for sum), 2S2D6 -can give one or more parameters-",
     ) 
-    my_parser.add_argument(
-        "-u",
-        "--update",
-        action="store_true",
-        help="self-update, alternatively, use pip(3) install --upgrade pydiceroller for manual update",
-    ), 
     my_parser.add_argument(
         "-s",
         "--silent",

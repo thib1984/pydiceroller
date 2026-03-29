@@ -20,9 +20,6 @@ def pydiceroller():
     #colorama.init()
     os.sys.stdin.reconfigure(encoding='utf-8')
     os.sys.stdout.reconfigure(encoding='utf-8')
-    if compute_args().update:
-        update()
-        exit()
     if not compute_args().dices:
         print("no dice given")    
         exit(1)
@@ -74,18 +71,4 @@ def pydiceroller():
                 break    
         else:
             break
-def update():
-    """
-    entry point for --update
-    """
-    prog = "pip3"
-    if (which("pip3")) is None:
-        prog = "pip"
-    params = [
-        prog,
-        "install",
-        "--upgrade",
-        "pydiceroller",
-    ]
-    subprocess.check_call(params)
    

@@ -20,7 +20,6 @@ positional arguments:
 
 optional arguments:
   -h, --help    show this help message and exit
-  -u, --update  self-update, alternatively, use pip(3) install --upgrade pydiceroller for manual update
   -s, --silent  minimal output, use for pipe commands
   -i, --infinite  press entry to relaunch same dices, ctrl-c to exit 
 

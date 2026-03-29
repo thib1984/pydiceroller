@@ -1,3 +1,8 @@
+## 1.1.0
+
+- disable self update
+- clean docs
+
 ## 0.1.1
 
 - add option "2s2d6"
