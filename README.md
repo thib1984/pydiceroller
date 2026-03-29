@@ -25,37 +25,24 @@ optional arguments:
   -i, --infinite  press entry to relaunch same dices, ctrl-c to exit 
 
 ```  
-## ⚙️ Install/Upgrade
+## ⚙️ Install
 
-### Prerequisites
+See [this page](INSTALL.md)
 
-- Install Python 3 for your system
-- Install pip3* for your system
-- Install git for your system
+## :construction_worker: Contribution
 
-
- ### Installation 
-
-``pip3 install pydiceroller``
-
-### Upgrade
-
-
-``pydiceroller -u``
- 
- or
-
- `` pip3 install --upgrade pydiceroller``
-
-*_Install pip instead of pip3, if pip3 does not exist for your OS_
+See [this page](CONTRIBUTING.md)
 
 ## :package: Changelog
 
 See [this page](CHANGELOG.md)
 
+
 ## License
 
 MIT License
 
-See [this page](LICENSE) for details
+Copyright (c) 2021 [thib1984](https://github.com/thib1984)
+
+See [this page](LICENSE.txt) for details
     
