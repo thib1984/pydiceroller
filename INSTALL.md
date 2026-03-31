@@ -24,7 +24,8 @@ pip uninstall pydiceroller --break-system-packages
 # Installation
 
 ```
-pipx install pydiceroller
+pipx upgrade pydiceroller #to update pydiceroller
+pipx reinstall pydiceroller #to force update dependencies
 ```
 
 # Upgrade

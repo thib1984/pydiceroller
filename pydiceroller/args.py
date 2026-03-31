@@ -29,15 +29,16 @@ Synopsis : minimal dice roller
         """,
         epilog=f"""
 To upgrade, run:
-    pipx upgrade pyconwaysgame --include-deps
+    pipx upgrade pydiceroller
+    pipx reinstall pydiceroller #to force update dependencies
 To install, run:
-    pipx install pyconwaysgame
+    pipx install pydiceroller
 To force reinstall, run:
-    pipx install pyconwaysgame --force
+    pipx install pydiceroller --force
 To uninstall, run:
-    pipx uninstall pyconwaysgame
+    pipx uninstall pydiceroller
 To force uninstall (if needed), run:
-    pipx uninstall pyconwaysgame --force
+    pipx uninstall pydiceroller --force
 
 {get_env_report()}
 
