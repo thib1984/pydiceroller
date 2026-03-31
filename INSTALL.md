@@ -24,17 +24,16 @@ pip uninstall pydiceroller --break-system-packages
 # Installation
 
 ```
-pipx upgrade pydiceroller #to update pydiceroller
-pipx reinstall pydiceroller #to force update dependencies
+pipx install pydiceroller
 ```
 
 # Upgrade
 
 ```
-pipx upgrade pydiceroller --include-deps
+pipx upgrade pydiceroller #to update pydiceroller
+pipx reinstall pydiceroller #to force update dependencies
 ```
 
-This command upgrades the application to the latest version and also updates all its dependencies.
 
 # Uninstall
 
